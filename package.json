@@ -4,6 +4,15 @@
   "version": "0.1.0",
   "type": "module",
   "description": "Interactive showcase for the nationid TypeScript identity-document validation library.",
+  "homepage": "https://lu1tr0n.github.io/nationid_example/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lu1tr0n/nationid_example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lu1tr0n/nationid_example/issues"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
