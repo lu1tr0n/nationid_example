@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils.ts";
 const NAV_ITEMS: ReadonlyArray<{ readonly to: string; readonly label: string }> = [
   { to: "/", label: "Home" },
   { to: "/playground", label: "Playground" },
+  { to: "/passports", label: "Passports" },
+  { to: "/mrz", label: "MRZ" },
   { to: "/countries", label: "Countries" },
   { to: "/examples", label: "Examples" },
 ];

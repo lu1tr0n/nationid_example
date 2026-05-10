@@ -7,34 +7,97 @@ import type { DocumentTypeCode } from "nationid";
  * running the validator against synthetic candidates until check digits match.
  * Used as one-click "Try a sample" affordances in the playground.
  *
- * Pinned to `nationid@0.3.0`. New v0.4 codes (BO_CI, EC_CEDULA, …) can be
- * added incrementally as the library publishes them.
+ * Aligned with `nationid@^0.5.0` — covers the 22 v0.4 countries and the new
+ * v0.5 codes (`MX_NSS`, all 22 `<CC>_PASAPORTE` specs).
  */
 export const SAMPLE_INPUTS: Partial<Record<DocumentTypeCode, string>> = {
+  // El Salvador
   SV_DUI: "04567890-3",
   SV_NIT: "06141505851012",
+  SV_PASAPORTE: "A12345678",
+  // México
   MX_CURP: "GOMC850315HDFRRR07",
   MX_RFC_PF: "VECJ880326XXX",
   MX_RFC_PM: "ABC123456T1A",
+  MX_NSS: "12345678903",
+  MX_PASAPORTE: "G12345678",
+  // Colombia
   CO_CC: "1020304050",
   CO_NIT: "900123456-7",
+  CO_PASAPORTE: "AB123456",
+  // Brasil
   BR_CPF: "390.533.447-05",
   BR_CNPJ: "11.222.333/0001-81",
+  BR_PASAPORTE: "AB123456",
+  // Perú
   PE_DNI: "12345678",
   PE_RUC: "20131312955",
+  PE_PASAPORTE: "A12345678",
+  // Argentina
   AR_DNI: "12345678",
   AR_CUIT: "30-12345678-1",
   AR_CUIL: "20-12345678-3",
+  AR_PASAPORTE: "AAA123456",
+  // Chile
   CL_RUT: "11.111.111-1",
+  CL_PASAPORTE: "P12345678",
+  // República Dominicana
   DO_CEDULA: "001-1234567-8",
+  DO_PASAPORTE: "SC1234567",
+  // Guatemala
   GT_DPI: "1234 56789 0101",
   GT_NIT: "1234567-8",
+  GT_PASAPORTE: "123456789",
+  // Honduras
   HN_DNI: "0801-1990-12345",
+  HN_PASAPORTE: "E12345678",
+  // Costa Rica
   CR_CEDULA_FISICA: "1-1234-5678",
+  CR_PASAPORTE: "123456789",
+  // España
   ES_DNI: "12345678Z",
   ES_NIE: "X1234567L",
+  ES_PASAPORTE: "AAA123456",
+  // United States
   US_SSN: "123-45-6789",
   US_EIN: "12-3456789",
+  US_PASAPORTE: "A12345678",
+  // v0.4.0 — Bolivia
+  BO_CI: "1234567 LP",
+  BO_NIT: "1234567",
+  BO_PASAPORTE: "B1234567",
+  // v0.4.0 — Ecuador
+  EC_CEDULA: "1710034065",
+  EC_RUC: "1710034065001",
+  EC_PASAPORTE: "A12345678",
+  // v0.4.0 — Paraguay
+  PY_CI: "1234567",
+  PY_RUC: "80000000-5",
+  PY_PASAPORTE: "AB123456",
+  // v0.4.0 — Nicaragua
+  NI_CEDULA: "001-130180-0008X",
+  NI_RUC: "12345678901234",
+  NI_PASAPORTE: "C1234567",
+  // v0.4.0 — Panamá
+  PA_CEDULA: "8-123-456",
+  PA_RUC: "8-123-456",
+  PA_PASAPORTE: "PA123456",
+  // v0.4.0 — Uruguay
+  UY_CI: "1.234.567-2",
+  UY_RUT: "211234567001",
+  UY_PASAPORTE: "A123456",
+  // v0.4.0 — Canadá
+  CA_SIN: "046-454-286",
+  CA_BN: "123456789RT0001",
+  CA_PASAPORTE: "AB123456",
+  // v0.4.0 — Portugal
+  PT_NIF: "503504564",
+  PT_CC: "123456789ZZ4",
+  PT_PASAPORTE: "C123456",
+  // v0.4.0 — Venezuela
+  VE_CEDULA: "V-12345678",
+  VE_RIF: "J-12345678-4",
+  VE_PASAPORTE: "12345678",
 };
 
 export function getSample(code: DocumentTypeCode): string | undefined {

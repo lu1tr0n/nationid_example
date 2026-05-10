@@ -4,6 +4,10 @@ import { CodeBlock } from "@/components/CodeBlock.tsx";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher.tsx";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card.tsx";
 import {
+  BR_CNPJ_ALPHANUM_SOURCE,
+  BrCnpjAlphanumExample,
+} from "@/examples/BrCnpjAlphanumExample.tsx";
+import {
   CrossCountrySearchExample,
   CROSS_COUNTRY_SOURCE,
 } from "@/examples/CrossCountrySearchExample.tsx";
@@ -13,6 +17,7 @@ import {
 } from "@/examples/DynamicPickerExample.tsx";
 import { HashStorageExample, HASH_STORAGE_SOURCE } from "@/examples/HashStorageExample.tsx";
 import { MaskingExample, MASKING_SOURCE } from "@/examples/MaskingExample.tsx";
+import { MX_NSS_SOURCE, MxNssExample } from "@/examples/MxNssExample.tsx";
 import {
   ReactHookFormExample,
   REACT_HOOK_FORM_SOURCE,
@@ -84,6 +89,24 @@ const EXAMPLES: ReadonlyArray<Example> = [
       "Useful for B2B SaaS onboarding when a customer's country isn't known up-front. Filter by purpose and let users search by either local name (RFC) or full name (Registro Federal de Contribuyentes).",
     Component: CrossCountrySearchExample,
     source: CROSS_COUNTRY_SOURCE,
+    lang: "tsx",
+  },
+  {
+    title: "BR_CNPJ alphanumeric (IN RFB 2.229/2024)",
+    subtitle: "Same validate() call accepts legacy and post-2026-07-01 forms.",
+    callout:
+      "Receita Federal extended the CNPJ alphabet to [A-Z0-9] effective 2026-07-01 while keeping the same code, mod-11 weights, and 14-character total length. nationid handles both forms transparently — every existing digit-only CNPJ keeps validating because the char-value formula collapses to the legacy parseInt for digits.",
+    Component: BrCnpjAlphanumExample,
+    source: BR_CNPJ_ALPHANUM_SOURCE,
+    lang: "tsx",
+  },
+  {
+    title: "MX_NSS — IMSS Social Security Number",
+    subtitle: "11-digit Luhn, the third leg of every Mexican payroll integration.",
+    callout:
+      "Mexican workers carry three IDs: CURP (national identity), RFC (tax), and NSS (social security). The NSS uses the standard ISO/IEC 7812-1 Luhn check digit — identical to credit cards and Canada's SIN. v0.5 closed the longstanding NSS gap so payroll, IMSS portal, and benefits flows can validate the third ID with the same library.",
+    Component: MxNssExample,
+    source: MX_NSS_SOURCE,
     lang: "tsx",
   },
 ];

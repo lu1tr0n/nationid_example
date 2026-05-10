@@ -5,6 +5,8 @@ import { ThemeProvider } from "./lib/theme.tsx";
 import { Countries } from "./pages/Countries.tsx";
 import { Examples } from "./pages/Examples.tsx";
 import { Home } from "./pages/Home.tsx";
+import { Mrz } from "./pages/Mrz.tsx";
+import { Passports } from "./pages/Passports.tsx";
 import { Playground } from "./pages/Playground.tsx";
 
 export function App() {
@@ -18,6 +20,8 @@ export function App() {
               <Route path="/playground" element={<Playground />} />
               <Route path="/countries" element={<Countries />} />
               <Route path="/examples" element={<Examples />} />
+              <Route path="/passports" element={<Passports />} />
+              <Route path="/mrz" element={<Mrz />} />
             </Routes>
           </Layout>
         </HashRouter>
