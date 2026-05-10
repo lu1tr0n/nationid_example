@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/*
+ * Variant override so `dark:` utilities react to a class on <html>.
+ * Tailwind v4 ships an `is(.dark *)` variant; we override with `where()` to
+ * keep specificity low and let user styles win on hover/focus.
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+
+  --color-canvas: oklch(98.5% 0.005 240);
+  --color-canvas-muted: oklch(96.5% 0.008 240);
+  --color-ink: oklch(20% 0.02 250);
+  --color-ink-muted: oklch(45% 0.02 250);
+  --color-line: oklch(90% 0.01 240);
+  --color-accent: oklch(58% 0.18 155);
+  --color-accent-soft: oklch(94% 0.06 155);
+  --color-danger: oklch(58% 0.20 25);
+  --color-warn: oklch(72% 0.16 75);
+
+  --radius-card: 14px;
+  --radius-pill: 999px;
+}
+
+.dark {
+  --color-canvas: oklch(15% 0.015 250);
+  --color-canvas-muted: oklch(20% 0.02 250);
+  --color-ink: oklch(96% 0.005 240);
+  --color-ink-muted: oklch(72% 0.02 240);
+  --color-line: oklch(28% 0.02 250);
+  --color-accent: oklch(74% 0.17 155);
+  --color-accent-soft: oklch(28% 0.06 155);
+  --color-danger: oklch(70% 0.18 25);
+  --color-warn: oklch(80% 0.15 75);
+}
+
+html {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Subtle dotted grid backdrop, tuned for both themes via canvas vars. */
+.bg-grid {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    color-mix(in oklch, var(--color-line) 70%, transparent) 1px,
+    transparent 0
+  );
+  background-size: 24px 24px;
+}
+
+/* Used inside CodeBlock to align the gutter with shiki output. */
+.code-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+.code-scroll::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.code-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

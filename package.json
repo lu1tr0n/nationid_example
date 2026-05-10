@@ -1,0 +1,42 @@
+{
+  "name": "nationid-example",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Interactive showcase for the nationid TypeScript identity-document validation library.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "5.2.2",
+    "@radix-ui/react-label": "2.1.8",
+    "@radix-ui/react-select": "2.2.6",
+    "@radix-ui/react-slot": "1.2.4",
+    "@radix-ui/react-tabs": "1.1.13",
+    "@radix-ui/react-tooltip": "1.2.8",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lucide-react": "0.475.0",
+    "nationid": "^0.3.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-hook-form": "7.75.0",
+    "react-router": "7.15.0",
+    "shiki": "4.0.2",
+    "tailwind-merge": "3.5.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.3.0",
+    "@types/node": "24.10.1",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "5.0.0",
+    "tailwindcss": "4.3.0",
+    "typescript": "5.9.3",
+    "vite": "7.2.0"
+  }
+}
