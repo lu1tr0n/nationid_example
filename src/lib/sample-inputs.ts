@@ -7,8 +7,10 @@ import type { DocumentTypeCode } from "nationid";
  * running the validator against synthetic candidates until check digits match.
  * Used as one-click "Try a sample" affordances in the playground.
  *
- * Aligned with `nationid@^0.5.0` — covers the 22 v0.4 countries and the new
- * v0.5 codes (`MX_NSS`, all 22 `<CC>_PASAPORTE` specs).
+ * Aligned with `nationid@^1.0.0`. Covers the 22 LATAM countries + the 12
+ * European countries added in v0.6 (GB/FR/DE/IT/NL/BE/CH/PL/SE/NO/DK/FI).
+ * Missing entries here just mean the playground falls back to a placeholder
+ * — the per-country subpath still works.
  */
 export const SAMPLE_INPUTS: Partial<Record<DocumentTypeCode, string>> = {
   // El Salvador

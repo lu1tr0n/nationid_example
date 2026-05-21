@@ -56,7 +56,7 @@ listDocuments("MX", "es");
   },
   {
     title: "Passports",
-    tagline: "22-country passport coverage + ICAO 9303 MRZ primitives.",
+    tagline: "34-country passport coverage + ICAO 9303 MRZ primitives.",
     icon: Plane,
     snippet: `import { validate } from "nationid";
 import { mrzCheckDigit } from "nationid/algorithms";
@@ -72,12 +72,12 @@ export function Home() {
     <div className="bg-grid">
       <section className="mx-auto flex max-w-6xl flex-col items-start gap-8 px-4 pb-16 pt-12 sm:px-6 sm:pt-20">
         <Badge variant="muted" className="font-mono">
-          v0.5.0 · 22 countries · 80+ document codes · 0 runtime deps
+          v1.0.0 · 34 countries · ~120 document codes · 0 runtime deps
         </Badge>
         <h1 className="font-serif text-4xl leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
           Validate identity documents
           <br />
-          <span className="text-[var(--color-accent)]">from 22 countries.</span>
+          <span className="text-[var(--color-accent)]">from 34 countries.</span>
         </h1>
         <p className="max-w-2xl text-base text-[var(--color-ink-muted)] sm:text-lg">
           <span className="font-mono text-[var(--color-ink)]">nationid</span> is a TypeScript-first,
@@ -131,14 +131,51 @@ export function Home() {
             <div className="rounded-[var(--radius-card)] border border-[var(--color-line)] bg-[var(--color-canvas)] p-4">
               <div className="mb-2 flex items-center gap-2">
                 <Badge variant="success" className="font-mono">
-                  v0.4.0
+                  v1.0.0
                 </Badge>
-                <span className="text-xs text-[var(--color-ink-muted)]">9 new countries</span>
+                <span className="text-xs text-[var(--color-ink-muted)]">API stability + cited confidence</span>
+              </div>
+              <ul className="space-y-1.5 text-sm text-[var(--color-ink-muted)]">
+                <li>
+                  <code className="font-mono text-xs">parse</code> /{" "}
+                  <code className="font-mono text-xs">getSpec</code> now narrow on the code argument
+                  — <code className="font-mono text-xs">parse("MX_CURP", x).code</code> infers the
+                  literal, not the 124-member union.
+                </li>
+                <li>
+                  <code className="font-mono text-xs">extractDOB / extractSex / extractRegion</code>{" "}
+                  constrain their first arg to the codes that actually encode each field.
+                </li>
+                <li>
+                  npm tarball <strong>1.7 MB → 414 KB (-76%)</strong>; sourcemaps no longer shipped.
+                </li>
+                <li>
+                  Governance test fails CI if any{" "}
+                  <code className="font-mono text-xs">confidence: "high"</code> spec lacks a
+                  first-party issuer citation.
+                </li>
+              </ul>
+              <Link
+                to="/playground"
+                className="mt-3 inline-flex items-center gap-1 text-sm text-[var(--color-accent)] hover:underline"
+              >
+                Try the v1.0 playground <ArrowRight className="size-3.5" aria-hidden />
+              </Link>
+            </div>
+            <div className="rounded-[var(--radius-card)] border border-[var(--color-line)] bg-[var(--color-canvas)] p-4">
+              <div className="mb-2 flex items-center gap-2">
+                <Badge variant="success" className="font-mono">
+                  v0.6.0
+                </Badge>
+                <span className="text-xs text-[var(--color-ink-muted)]">12 European countries</span>
               </div>
               <p className="text-sm text-[var(--color-ink-muted)]">
-                Bolivia, Ecuador, Paraguay, Nicaragua, Panamá, Uruguay, Canada, Portugal, Venezuela
-                — pushing total coverage from 13 to 22 countries with their identity, tax, and
-                migratory specs.
+                United Kingdom (NINO, NHS, UTR, VAT), France (NIR, SIREN, SIRET, TVA), Germany
+                (Steuer-ID, USt-IdNr), Italy (Codice Fiscale, Partita IVA), Netherlands (BSN, BTW),
+                Belgium (NRN, BTW), Switzerland (AHV, UID, MWST), Poland (PESEL, NIP, REGON),
+                Sweden (Personnummer, Organisationsnummer), Norway (Fødselsnummer, Organisasjonsnummer),
+                Denmark (CPR, CVR), Finland (HETU, Y-tunnus) — pushing total coverage to 34
+                countries.
               </p>
               <Link
                 to="/countries"
@@ -146,38 +183,6 @@ export function Home() {
               >
                 Browse the catalog <ArrowRight className="size-3.5" aria-hidden />
               </Link>
-            </div>
-            <div className="rounded-[var(--radius-card)] border border-[var(--color-line)] bg-[var(--color-canvas)] p-4">
-              <div className="mb-2 flex items-center gap-2">
-                <Badge variant="success" className="font-mono">
-                  v0.5.0
-                </Badge>
-                <span className="text-xs text-[var(--color-ink-muted)]">passports + IMSS + alphanumeric CNPJ</span>
-              </div>
-              <ul className="space-y-1.5 text-sm text-[var(--color-ink-muted)]">
-                <li>
-                  <Link to="/passports" className="text-[var(--color-accent)] hover:underline">
-                    22 passport specs
-                  </Link>{" "}
-                  — one <code className="font-mono text-xs">{"<CC>_PASAPORTE"}</code> per country.
-                </li>
-                <li>
-                  <Link to="/mrz" className="text-[var(--color-accent)] hover:underline">
-                    ICAO 9303 MRZ calculator
-                  </Link>{" "}
-                  exposed via <code className="font-mono text-xs">nationid/algorithms</code>.
-                </li>
-                <li>
-                  <Link to="/examples" className="text-[var(--color-accent)] hover:underline">
-                    BR_CNPJ alphanumeric
-                  </Link>{" "}
-                  per IN RFB 2.229/2024 (effective 2026-07-01) and{" "}
-                  <Link to="/examples" className="text-[var(--color-accent)] hover:underline">
-                    MX_NSS
-                  </Link>{" "}
-                  Luhn validator.
-                </li>
-              </ul>
             </div>
           </CardContent>
           <div className="border-t border-[var(--color-line)] bg-[var(--color-canvas-muted)] px-4 py-2.5 text-xs text-[var(--color-ink-muted)]">
