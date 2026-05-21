@@ -44,9 +44,18 @@ function deriveResults(code: DocumentTypeCode, input: string, locale: Locale): D
       normalized: normalize(code, input),
       maskedDisplay: mask(code, input),
       last4: lastN(code, input, 4),
-      dob: supports(code, "dob") ? extractDOB(code, input) : null,
-      sex: supports(code, "sex") ? extractSex(code, input) : null,
-      region: supports(code, "region") ? extractRegion(code, input) : null,
+      // v1.0 narrowed `extractDOB/Sex/Region` to literal-union codes.
+      // We gate with `supports()` at runtime; `supports` is not a TS predicate
+      // so we cast at the call site (see nationid MIGRATION.md §0.4).
+      dob: supports(code, "dob")
+        ? extractDOB(code as Parameters<typeof extractDOB>[0], input)
+        : null,
+      sex: supports(code, "sex")
+        ? extractSex(code as Parameters<typeof extractSex>[0], input)
+        : null,
+      region: supports(code, "region")
+        ? extractRegion(code as Parameters<typeof extractRegion>[0], input)
+        : null,
       displayName,
       errorMessage: parseResult.ok
         ? null
