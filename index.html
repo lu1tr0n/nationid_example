@@ -4,9 +4,57 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f172a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='ui-monospace,monospace' font-size='18' font-weight='700' fill='%2334d399'%3Eid%3C/text%3E%3C/svg%3E" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Interactive showcase for nationid — TypeScript-first, zero-dependency identity-document validation for 22 countries." />
+    <meta name="description" content="Interactive showcase for nationid — TypeScript-first, zero-dependency identity-document validator for 34 countries (~120 specs). Validate, parse, format, extract DOB/sex/region, mask & hash PII, all locale-aware." />
     <meta name="theme-color" content="#0f172a" />
-    <title>nationid · interactive showcase</title>
+    <title>nationid · interactive showcase for 34-country identity validation</title>
+
+    <!-- Open Graph / share unfurl (Slack, Discord, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lu1tr0n.github.io/nationid_example/" />
+    <meta property="og:title" content="nationid · interactive showcase for 34-country identity validation" />
+    <meta property="og:description" content="TypeScript-first validator for national identity and tax documents — 34 countries, ~120 specs, cited confidence tiers, zero runtime dependencies. Try every country, every helper, in 3 locales." />
+    <meta property="og:site_name" content="nationid" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:locale:alternate" content="pt_BR" />
+    <meta property="og:image" content="https://lu1tr0n.github.io/nationid_example/og-image.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="nationid · TypeScript-first validator for national identity documents across 34 countries" />
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="nationid · 34-country identity validator for TypeScript" />
+    <meta name="twitter:description" content="Validate, parse, mask, hash and extract data from national identity and tax documents in 34 countries. Zero deps, tree-shakable per country, locale-aware." />
+    <meta name="twitter:image" content="https://lu1tr0n.github.io/nationid_example/og-image.svg" />
+    <meta name="twitter:image:alt" content="nationid · TypeScript-first validator for national identity documents across 34 countries" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://lu1tr0n.github.io/nationid_example/" />
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "nationid",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Node.js, browser, Bun, Deno, Edge runtimes",
+        "url": "https://lu1tr0n.github.io/nationid_example/",
+        "downloadUrl": "https://www.npmjs.com/package/nationid",
+        "softwareVersion": "1.1.0",
+        "license": "https://opensource.org/licenses/MIT",
+        "description": "TypeScript-first validator for national identity and tax documents across 34 countries.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": {
+          "@type": "Person",
+          "name": "Luis Navarro",
+          "url": "https://github.com/lu1tr0n"
+        }
+      }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
