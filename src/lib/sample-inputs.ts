@@ -124,6 +124,9 @@ export const SAMPLE_INPUTS: Partial<Record<DocumentTypeCode, string>> = {
   MT_VAT: "MT11679112",
   CY_VAT: "CY10259033P",
   IS_VSK: "123456",
+  // v2.1.0 — Japan
+  JP_MY_NUMBER: "123456789018",
+  JP_CORPORATE_NUMBER: "7000012050002",
 };
 
 export function getSample(code: DocumentTypeCode): string | undefined {

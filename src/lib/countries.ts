@@ -6,8 +6,8 @@ import type { CountryCode } from "nationid";
  * Kept here (not in the library) because flag emoji + display country name
  * are UI-only concerns. The library itself stays locale-agnostic.
  *
- * Aligned with `nationid@^2.0.0` — 52 countries (v0.1 + v0.4 + v0.6 EU
- * principal + v1.2 India + v2.0 EU-VAT complete).
+ * Aligned with `nationid@^2.1.0` — 53 countries (v0.1 + v0.4 + v0.6 EU
+ * principal + v1.2 India + v2.0 EU-VAT complete + v2.1 Japan).
  */
 export const COUNTRY_META: Readonly<Record<CountryCode, { readonly name: string; readonly flag: string }>> = {
   // v0.1.0
@@ -49,6 +49,8 @@ export const COUNTRY_META: Readonly<Record<CountryCode, { readonly name: string;
   FI: { name: "Finland", flag: "🇫🇮" },
   // v1.2.0 — Asia phase 1
   IN: { name: "India", flag: "🇮🇳" },
+  // v2.1.0 — Asia phase 2: Japan
+  JP: { name: "Japan", flag: "🇯🇵" },
   // v1.7.0 — EU-VAT complete (16 EU + 1 EEA)
   IE: { name: "Ireland", flag: "🇮🇪" },
   AT: { name: "Austria", flag: "🇦🇹" },
