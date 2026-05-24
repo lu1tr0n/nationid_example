@@ -100,6 +100,30 @@ export const SAMPLE_INPUTS: Partial<Record<DocumentTypeCode, string>> = {
   VE_CEDULA: "V-12345678",
   VE_RIF: "J-12345678-4",
   VE_PASAPORTE: "12345678",
+  // v1.2.0 — India (canonical synthetic, Verhoeff check passes)
+  IN_AADHAAR: "2341 2341 2346",
+  IN_VID: "1234567890123455",
+  IN_PAN: "AAPFU0939F",
+  IN_GSTIN: "27AAPFU0939F1ZV",
+  IN_EPIC: "ABC1234567",
+  // v2.0.0 — EU-VAT complete (16 EU + Iceland)
+  IE_VAT: "IE8473625E",
+  AT_UID: "ATU13585627",
+  LU_VAT: "LU15027442",
+  GR_VAT: "EL094259216",
+  CZ_DIC: "CZ25123891",
+  HU_VAT: "HU12892312",
+  RO_VAT: "RO18547290",
+  BG_VAT: "BG100000001",
+  HR_OIB: "HR33392005961",
+  SK_VAT: "SK1020000003",
+  SI_VAT: "SI50223054",
+  LT_VAT: "LT100001110",
+  LV_VAT: "LV40003009497",
+  EE_VAT: "EE100594102",
+  MT_VAT: "MT11679112",
+  CY_VAT: "CY10259033P",
+  IS_VSK: "123456",
 };
 
 export function getSample(code: DocumentTypeCode): string | undefined {

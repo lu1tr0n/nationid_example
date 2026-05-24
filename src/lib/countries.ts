@@ -6,7 +6,8 @@ import type { CountryCode } from "nationid";
  * Kept here (not in the library) because flag emoji + display country name
  * are UI-only concerns. The library itself stays locale-agnostic.
  *
- * Aligned with `nationid@^1.0.0` — 34 countries (v0.1 + v0.4 + v0.6 EU expansion).
+ * Aligned with `nationid@^2.0.0` — 52 countries (v0.1 + v0.4 + v0.6 EU
+ * principal + v1.2 India + v2.0 EU-VAT complete).
  */
 export const COUNTRY_META: Readonly<Record<CountryCode, { readonly name: string; readonly flag: string }>> = {
   // v0.1.0
@@ -46,6 +47,26 @@ export const COUNTRY_META: Readonly<Record<CountryCode, { readonly name: string;
   NO: { name: "Norway", flag: "🇳🇴" },
   DK: { name: "Denmark", flag: "🇩🇰" },
   FI: { name: "Finland", flag: "🇫🇮" },
+  // v1.2.0 — Asia phase 1
+  IN: { name: "India", flag: "🇮🇳" },
+  // v1.7.0 — EU-VAT complete (16 EU + 1 EEA)
+  IE: { name: "Ireland", flag: "🇮🇪" },
+  AT: { name: "Austria", flag: "🇦🇹" },
+  LU: { name: "Luxembourg", flag: "🇱🇺" },
+  GR: { name: "Greece", flag: "🇬🇷" },
+  CZ: { name: "Czechia", flag: "🇨🇿" },
+  HU: { name: "Hungary", flag: "🇭🇺" },
+  RO: { name: "Romania", flag: "🇷🇴" },
+  BG: { name: "Bulgaria", flag: "🇧🇬" },
+  HR: { name: "Croatia", flag: "🇭🇷" },
+  SK: { name: "Slovakia", flag: "🇸🇰" },
+  SI: { name: "Slovenia", flag: "🇸🇮" },
+  LT: { name: "Lithuania", flag: "🇱🇹" },
+  LV: { name: "Latvia", flag: "🇱🇻" },
+  EE: { name: "Estonia", flag: "🇪🇪" },
+  MT: { name: "Malta", flag: "🇲🇹" },
+  CY: { name: "Cyprus", flag: "🇨🇾" },
+  IS: { name: "Iceland", flag: "🇮🇸" },
 };
 
 export function countryName(code: CountryCode): string {
