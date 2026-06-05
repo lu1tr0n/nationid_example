@@ -36,8 +36,8 @@ importers:
         specifier: 0.475.0
         version: 0.475.0(react@19.2.0)
       nationid:
-        specifier: ^2.1.0
-        version: 2.1.0
+        specifier: ^2.2.0
+        version: 2.2.0
       react:
         specifier: 19.2.0
         version: 19.2.0
@@ -1261,8 +1261,8 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  nationid@2.1.0:
-    resolution: {integrity: sha512-kysMTF5H2m8izmb9PMB0sDR0H0ye60AjaWR/uJeljN+4or93PpMhLAfYS3JUEl1DWZjFNtQvm8GjtxBzHqmAnA==}
+  nationid@2.2.0:
+    resolution: {integrity: sha512-9+aajC4ERAqBZ7VjUDwqL9CvNQ8woOUmuLBDZuPC0zWJbppk49P4Fxc7Jqno6TVGIwEv0FPakrU3z5b3mj17ww==}
     engines: {node: '>=20'}
 
   node-releases@2.0.38:
@@ -2517,7 +2517,7 @@ snapshots:
 
   nanoid@3.3.12: {}
 
-  nationid@2.1.0: {}
+  nationid@2.2.0: {}
 
   node-releases@2.0.38: {}
 

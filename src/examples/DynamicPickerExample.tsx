@@ -91,7 +91,7 @@ export function DynamicPickerExample() {
 export const DYNAMIC_PICKER_SOURCE = `import { listSupportedCountries } from "nationid";
 import { listDocuments, type Locale } from "nationid/catalog";
 
-// All 34 countries straight from the library. Add a new spec in nationid
+// All 54 countries straight from the library. Add a new spec in nationid
 // and this dropdown updates with zero changes here.
 export function CountryAndDocumentPicker({ locale }: { locale: Locale }) {
   const [country, setCountry] = useState<CountryCode>("CO");

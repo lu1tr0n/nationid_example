@@ -4,11 +4,11 @@
 
 Showcase interactivo para [`nationid`](https://github.com/lu1tr0n/nationid) — un validador
 TypeScript-first y zero-dependency para documentos de identidad, tributarios, electorales y
-migratorios de **34 países**.
+migratorios de **54 países**.
 
 > Demo en vivo: https://lu1tr0n.github.io/nationid_example/
 
-Alineado con `nationid@^1.0.0` — 34 países, ~120 códigos de documento, cobertura completa de
+Alineado con `nationid@^2.2.0` — 54 países, ~145 códigos de documento, cobertura completa de
 pasaportes con primitivas MRZ ICAO 9303, BR_CNPJ alfanumérico (IN RFB 2.229/2024), MX_NSS, y
 las mejoras de narrowing de tipos de v1.0 para `parse / getSpec / extract*` más el tarball
 76% más chico en npm.
@@ -19,7 +19,7 @@ las mejoras de narrowing de tipos de v1.0 para `parse / getSpec / extract*` más
 - **Playground** — elegí un país y un documento, escribí un valor y mirá actualizarse en
   tiempo real cada helper (`validate`, `parse`, `format`, `normalize`, `mask`, `lastN`,
   `hash`, `extractDOB`, `extractSex`, `extractRegion`, `getErrorMessage`).
-- **Pasaportes** (`/passports`) — playground de pasaportes de 34 países con comparación
+- **Pasaportes** (`/passports`) — playground de pasaportes de 54 países con comparación
   cross-country, metadata localizada y citas de fuentes.
 - **MRZ** (`/mrz`) — calculadora en vivo del dígito verificador ICAO 9303 respaldada por
   `nationid/algorithms` (`mrzCheckDigit`, `validateMrzNumber`, `mrzCharValue`, `toMrzField9`).
@@ -30,14 +30,13 @@ las mejoras de narrowing de tipos de v1.0 para `parse / getSpec / extract*` más
   cross-country de tax ID, BR_CNPJ alfanumérico (IN RFB 2.229/2024), y validación Luhn de
   MX_NSS.
 
-## Seguimiento de v1.0
+## Seguimiento de versiones
 
-El showcase consume `nationid` directo desde npm. Cuando `nationid@1.0.0` salga, la línea de
-compatibilidad de este README y la entrada `dependencies` en package.json pasarán a
-`^1.0.0`. Ninguna pantalla existente necesita cambios de código — los breaking changes de
-v1.0 fueron todos en superficies de bajo tráfico (`pii.mask` lanzando error en códigos
-desconocidos, `exports` negando subpaths no documentados, y dos demotes de `confidence` en
-pasaportes) y este showcase ya seguía los patrones documentados.
+El showcase consume `nationid` directo desde npm y sigue la última versión. Hoy fija
+`^2.2.0`, que sumó Singapur (`SG_NRIC`, `SG_FIN`, `SG_UEN`) sobre el lote de IVA de la UE de
+v2.0 y Japón de v2.1. Subir la entrada `dependencies` y la línea de compatibilidad de arriba
+suele ser todo lo necesario — las pantallas leen el catálogo y la lista de países directo de
+la librería, así que las nuevas specs aparecen de forma automática.
 
 ## Correr localmente
 

@@ -56,7 +56,7 @@ listDocuments("MX", "es");
   },
   {
     title: "Passports",
-    tagline: "34-country passport coverage + ICAO 9303 MRZ primitives.",
+    tagline: "54-country passport coverage + ICAO 9303 MRZ primitives.",
     icon: Plane,
     snippet: `import { validate } from "nationid";
 import { mrzCheckDigit } from "nationid/algorithms";
@@ -72,12 +72,12 @@ export function Home() {
     <div className="bg-grid">
       <section className="mx-auto flex max-w-6xl flex-col items-start gap-8 px-4 pb-16 pt-12 sm:px-6 sm:pt-20">
         <Badge variant="muted" className="font-mono">
-          v1.0.0 · 34 countries · ~120 document codes · 0 runtime deps
+          v2.2.0 · 54 countries · ~145 document codes · 0 runtime deps
         </Badge>
         <h1 className="font-serif text-4xl leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
           Validate identity documents
           <br />
-          <span className="text-[var(--color-accent)]">from 34 countries.</span>
+          <span className="text-[var(--color-accent)]">from 54 countries.</span>
         </h1>
         <p className="max-w-2xl text-base text-[var(--color-ink-muted)] sm:text-lg">
           <span className="font-mono text-[var(--color-ink)]">nationid</span> is a TypeScript-first,
@@ -131,51 +131,47 @@ export function Home() {
             <div className="rounded-[var(--radius-card)] border border-[var(--color-line)] bg-[var(--color-canvas)] p-4">
               <div className="mb-2 flex items-center gap-2">
                 <Badge variant="success" className="font-mono">
-                  v1.0.0
+                  v2.2.0
                 </Badge>
-                <span className="text-xs text-[var(--color-ink-muted)]">API stability + cited confidence</span>
+                <span className="text-xs text-[var(--color-ink-muted)]">Singapore</span>
               </div>
               <ul className="space-y-1.5 text-sm text-[var(--color-ink-muted)]">
                 <li>
-                  <code className="font-mono text-xs">parse</code> /{" "}
-                  <code className="font-mono text-xs">getSpec</code> now narrow on the code argument
-                  — <code className="font-mono text-xs">parse("MX_CURP", x).code</code> infers the
-                  literal, not the 124-member union.
+                  <code className="font-mono text-xs">SG_NRIC</code> +{" "}
+                  <code className="font-mono text-xs">SG_FIN</code> (including the 2022 M-series)
+                  under <code className="font-mono text-xs">nationid/sg</code>, both{" "}
+                  <code className="font-mono text-xs">personal</code>.
                 </li>
                 <li>
-                  <code className="font-mono text-xs">extractDOB / extractSex / extractRegion</code>{" "}
-                  constrain their first arg to the codes that actually encode each field.
+                  <code className="font-mono text-xs">SG_UEN</code> covers all three category
+                  formats with check letters and a 38-code entity-type whitelist —{" "}
+                  <code className="font-mono text-xs">tax</code>.
                 </li>
                 <li>
-                  npm tarball <strong>1.7 MB → 414 KB (-76%)</strong>; sourcemaps no longer shipped.
-                </li>
-                <li>
-                  Governance test fails CI if any{" "}
-                  <code className="font-mono text-xs">confidence: "high"</code> spec lacks a
-                  first-party issuer citation.
+                  Check-letter logic cross-validated against{" "}
+                  <code className="font-mono text-xs">python-stdnum/stdnum/sg/uen.py</code>.
                 </li>
               </ul>
               <Link
-                to="/playground"
+                to="/countries#SG"
                 className="mt-3 inline-flex items-center gap-1 text-sm text-[var(--color-accent)] hover:underline"
               >
-                Try the v1.0 playground <ArrowRight className="size-3.5" aria-hidden />
+                Browse Singapore documents <ArrowRight className="size-3.5" aria-hidden />
               </Link>
             </div>
             <div className="rounded-[var(--radius-card)] border border-[var(--color-line)] bg-[var(--color-canvas)] p-4">
               <div className="mb-2 flex items-center gap-2">
                 <Badge variant="success" className="font-mono">
-                  v0.6.0
+                  v2.0.0
                 </Badge>
-                <span className="text-xs text-[var(--color-ink-muted)]">12 European countries</span>
+                <span className="text-xs text-[var(--color-ink-muted)]">EU-VAT complete</span>
               </div>
               <p className="text-sm text-[var(--color-ink-muted)]">
-                United Kingdom (NINO, NHS, UTR, VAT), France (NIR, SIREN, SIRET, TVA), Germany
-                (Steuer-ID, USt-IdNr), Italy (Codice Fiscale, Partita IVA), Netherlands (BSN, BTW),
-                Belgium (NRN, BTW), Switzerland (AHV, UID, MWST), Poland (PESEL, NIP, REGON),
-                Sweden (Personnummer, Organisationsnummer), Norway (Fødselsnummer, Organisasjonsnummer),
-                Denmark (CPR, CVR), Finland (HETU, Y-tunnus) — pushing total coverage to 34
-                countries.
+                Sixteen EU VAT validators plus one EEA (Iceland) landed in a single batch, bringing
+                the library to full VIES feature parity: Ireland, Austria, Luxembourg, Greece,
+                Czechia, Hungary, Romania, Bulgaria, Croatia, Slovakia, Slovenia, Lithuania, Latvia,
+                Estonia, Malta, Cyprus, and Iceland — backed by a reusable ISO/IEC 7064 MOD 11,10
+                check-digit primitive.
               </p>
               <Link
                 to="/countries"
