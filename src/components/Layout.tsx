@@ -10,6 +10,7 @@ const NAV_ITEMS: ReadonlyArray<{ readonly to: string; readonly label: string }> 
   { to: "/playground", label: "Playground" },
   { to: "/passports", label: "Passports" },
   { to: "/mrz", label: "MRZ" },
+  { to: "/react", label: "React" },
   { to: "/countries", label: "Countries" },
   { to: "/examples", label: "Examples" },
 ];
